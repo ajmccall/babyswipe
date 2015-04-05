@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="This_Or_That" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cd9-GR-eVm" userLabel="centerImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cd9-GR-eVm" secondAttribute="trailing" id="6jV-Zd-yiO"/>
+                            <constraint firstItem="Cd9-GR-eVm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PcD-Vm-99a"/>
+                            <constraint firstItem="Cd9-GR-eVm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wrC-fO-hBe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cd9-GR-eVm" secondAttribute="bottom" id="z0b-zK-nzt"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6qU-bx-Ofd" appends="YES" id="mqS-CP-Ocf"/>
+                            <outletCollection property="gestureRecognizers" destination="xR6-Mb-bhI" appends="YES" id="Mcn-ms-c3R"/>
+                            <outletCollection property="gestureRecognizers" destination="ces-BI-41g" appends="YES" id="Zgq-KI-e0W"/>
+                            <outletCollection property="gestureRecognizers" destination="GDl-eP-scd" appends="YES" id="2ho-fA-Jc9"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="centerImageView" destination="Cd9-GR-eVm" id="LMi-E3-LPu"/>
+                        <outlet property="downSwipeGesture" destination="ces-BI-41g" id="0TZ-PV-ENq"/>
+                        <outlet property="leftSwipeGesture" destination="6qU-bx-Ofd" id="iSB-cv-nxl"/>
+                        <outlet property="rightSwipeGesture" destination="xR6-Mb-bhI" id="jRG-nZ-tNc"/>
+                        <outlet property="upSwipGesture" destination="GDl-eP-scd" id="fB5-CU-smr"/>
+                    </connections>
+                </viewController>
+                <swipeGestureRecognizer direction="left" id="6qU-bx-Ofd" userLabel="leftSwipeGesture">
+                    <connections>
+                        <action selector="handleSwipe:" destination="BYZ-38-t0r" id="BM6-Xb-EdR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="xR6-Mb-bhI" userLabel="rightSwipeGesture">
+                    <connections>
+                        <action selector="handleSwipe:" destination="BYZ-38-t0r" id="r4g-Ef-CYU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="ces-BI-41g" userLabel="downSwipeGesture">
+                    <connections>
+                        <action selector="handleSwipe:" destination="BYZ-38-t0r" id="lHd-jn-IPl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="GDl-eP-scd" userLabel="upSwipeGesture">
+                    <connections>
+                        <action selector="handleSwipe:" destination="BYZ-38-t0r" id="3wx-rQ-iwh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="622" y="241"/>
+        </scene>
+    </scenes>
+</document>

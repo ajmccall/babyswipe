@@ -1,0 +1,6 @@
+framework module SwiftyJSON {
+  umbrella header "Pods-This Or That-SwiftyJSON-umbrella.h"
+
+  export *
+  module * { export * }
+}
