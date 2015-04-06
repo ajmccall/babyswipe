@@ -1,10 +1,10 @@
 {
     "title" : "Cats or Dogs",
     "imageSets" : {
-        "set1" : [
+        "imageSet1" : [
             "dog1", "dog2", "dog3", "dog4", "dog5", "dog6", "dog7", "dog8", "dog9"
         ],
-        "set2" : [
+        "imageSet2" : [
             "cat1", "cat2", "cat3", "cat4", "cat5", "cat6", "cat7", "cat8", "cat9"
         ]
     }

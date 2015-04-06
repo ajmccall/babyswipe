@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -28,19 +29,67 @@ class ViewController: UIViewController {
     
     let imageLibrary = ImageLibrary()
     
+    var dogAudio = AVAudioPlayer()
+    var catAudio = AVAudioPlayer()
+    
     //MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        swipingImageView = UIImageView(frame: CGRectZero)
-        swipingImageView.hidden = true
-        swipingImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.view.addSubview(swipingImageView)
+        self.setupSwipingImageView()
+        self.setupAudioFiles()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    //MARK: - Setup
+    
+    func setupSwipingImageView() {
+        
+        self.swipingImageView = UIImageView(frame: CGRectZero)
+        self.swipingImageView.hidden = true
+        self.swipingImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(swipingImageView)
+    }
+    
+    func setupAudioFiles() {
+        
+        if let audioFile = setupAudioPlayerWithFile("dog1", type: "wav") {
+            self.dogAudio = audioFile
+        }
+        
+        if let audioFile = setupAudioPlayerWithFile("cat1", type: "wav") {
+            self.catAudio = audioFile
+        }
+    }
+    
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+
+        if let path = NSBundle.mainBundle().pathForResource(file, ofType:type) {
+            var url = NSURL.fileURLWithPath(path)
+        
+            var error: NSError?
+        
+            if let audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error) {
+                return audioPlayer
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
+//    func createOpeningViews() {
+//
+//        var snapFrame = self.centerImageView.frame
+//        var innerFrame = CGRect(x: snapFrame.minX + 1, y: snapFrame.minY + 1, width: snapFrame.width - 2, height: snapFrame.height - 2)
+//        var maskLayer = CAShapeLayer()
+//        var circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: innerFrame.width)
+//        
+//    }
 
     //MARK: - Actions
     @IBAction func handleSwipe(recognizer: UISwipeGestureRecognizer) {
@@ -48,20 +97,25 @@ class ViewController: UIViewController {
         let centerFrame = self.centerImageView.frame
         var swipingImageViewFrame : CGRect
         var newImage : UIImage!
+        var audioToPay = AVAudioPlayer()
         
         switch(recognizer.direction) {
         case UISwipeGestureRecognizerDirection.Up:
             swipingImageViewFrame = CGRectOffset(centerFrame, 0, centerFrame.size.height)
             newImage = self.imageLibrary.nextImageFromSet1()
+            audioToPay = self.dogAudio
         case UISwipeGestureRecognizerDirection.Down:
             swipingImageViewFrame = CGRectOffset(centerFrame, 0, -centerFrame.size.height)
             newImage = self.imageLibrary.nextImageFromSet1()
+            audioToPay = self.dogAudio
         case UISwipeGestureRecognizerDirection.Left:
             swipingImageViewFrame = CGRectOffset(centerFrame, centerFrame.size.width, 0)
             newImage = self.imageLibrary.nextImageFromSet2()
+            audioToPay = self.catAudio
         case UISwipeGestureRecognizerDirection.Right:
             swipingImageViewFrame = CGRectOffset(centerFrame, -centerFrame.size.width, 0)
             newImage = self.imageLibrary.nextImageFromSet2()
+            audioToPay = self.catAudio
         default:
             swipingImageViewFrame = CGRectZero
         }
@@ -82,6 +136,7 @@ class ViewController: UIViewController {
             },
             completion: { finished in
 
+                audioToPay.play()
                 self.centerImageView.image = newImage
                 self.swipingImageView.frame = CGRectZero
                 self.swipingImageView.hidden = true

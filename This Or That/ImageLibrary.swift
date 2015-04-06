@@ -48,13 +48,13 @@ class ImageLibrary {
             if let data = NSData(contentsOfMappedFile: path) {
                 let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
 
-                let imageSet1ImageNames = json["imageSets"]["set1"]
+                let imageSet1ImageNames = json["imageSets"]["imageSet1"]
                 for (index: String, subJson: JSON) in imageSet1ImageNames {
 
                     imageSet1.append(UIImage(named: subJson.stringValue)!)
                 }
                 
-                let imageSet2ImageNames = json["imageSets"]["set2"]
+                let imageSet2ImageNames = json["imageSets"]["imageSet2"]
                 for (index: String, subJson: JSON) in imageSet2ImageNames {
 
                     imageSet2.append(UIImage(named: subJson.stringValue)!)

@@ -17,6 +17,8 @@
 		D21A2A751AD1392F0070DBA8 /* This_Or_ThatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A2A741AD1392F0070DBA8 /* This_Or_ThatTests.swift */; };
 		D21A2A881AD1C48E0070DBA8 /* dogs.cats.json in Resources */ = {isa = PBXBuildFile; fileRef = D21A2A871AD1C48E0070DBA8 /* dogs.cats.json */; };
 		D21A2A8A1AD1C67E0070DBA8 /* ImageLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A2A891AD1C67E0070DBA8 /* ImageLibrary.swift */; };
+		D222F22B1AD2D329000E0646 /* cat1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D222F2291AD2D329000E0646 /* cat1.wav */; };
+		D222F22C1AD2D329000E0646 /* dog1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D222F22A1AD2D329000E0646 /* dog1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		D21A2A741AD1392F0070DBA8 /* This_Or_ThatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = This_Or_ThatTests.swift; sourceTree = "<group>"; };
 		D21A2A871AD1C48E0070DBA8 /* dogs.cats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogs.cats.json; sourceTree = "<group>"; };
 		D21A2A891AD1C67E0070DBA8 /* ImageLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLibrary.swift; sourceTree = "<group>"; };
+		D222F2291AD2D329000E0646 /* cat1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat1.wav; sourceTree = "<group>"; };
+		D222F22A1AD2D329000E0646 /* dog1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dog1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		D21A2A581AD1392F0070DBA8 /* This Or That */ = {
 			isa = PBXGroup;
 			children = (
+				D222F2291AD2D329000E0646 /* cat1.wav */,
+				D222F22A1AD2D329000E0646 /* dog1.wav */,
 				D21A2A5B1AD1392F0070DBA8 /* AppDelegate.swift */,
 				D21A2A601AD1392F0070DBA8 /* ViewController.swift */,
 				D21A2A621AD1392F0070DBA8 /* Main.storyboard */,
@@ -228,8 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D222F22B1AD2D329000E0646 /* cat1.wav in Resources */,
 				D21A2A881AD1C48E0070DBA8 /* dogs.cats.json in Resources */,
 				D21A2A641AD1392F0070DBA8 /* Main.storyboard in Resources */,
+				D222F22C1AD2D329000E0646 /* dog1.wav in Resources */,
 				D21A2A691AD1392F0070DBA8 /* LaunchScreen.xib in Resources */,
 				D21A2A661AD1392F0070DBA8 /* Images.xcassets in Resources */,
 			);
