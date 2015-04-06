@@ -44,6 +44,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true;
+    }
+    
     //MARK: - Setup
     
     func setupSwipingImageView() {
